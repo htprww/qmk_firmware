@@ -44,20 +44,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                   KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
 
     [_WIN] = LAYOUT( \
-    KC_GRV,   KC_1,     KC_2,   KC_3,    KC_4,    KC_5,   KC_MINS, KC_EQL,   KC_6,     KC_7,   KC_8,    KC_9,    KC_0,    KC_BSLS, \
-    KC_ESC,   KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   POINTER, ARROW,    KC_Y,     KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC, \
-    KC_TAB,   KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_DEL,  FUNC,     KC_H,     KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-    KC_LCTL,  KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG,  KC_N,     KC_M,   KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),  \
-    G(KC_TAB),G(KC_GRV),KC_LALT,KC_LGUI, FN1,      KC_SPC, KC_LSPO, KC_RSPC,  KC_SPC,   FN2,     KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,\
-                                                  KC_SPC, KC_LSPO, KC_RSPC,  KC_SPC),
+    KC_ESC,   KC_1,     KC_2,   KC_3,    KC_4,    KC_5,   KC_GRV,  KC_BSLS, KC_6,     KC_7,   KC_8,    KC_9,    KC_0,    KC_DEL,  \
+    KC_TAB,   KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   SETMWE,  FUNC,    KC_Y,     KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC, \
+    NAV,      KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_MINS, KC_EQL,  KC_H,     KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+    KC_LSFT,  KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM, KC_DOT,  KC_SLSH, RSFT_T(KC_ENT),  \
+    A(KC_TAB),KC_LGUI,  KC_LALT,KC_LCTL, FN1,     KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   FN2,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,\
+                                                  KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
 
     [_GME] = LAYOUT( \
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_F1, KC_EQL,   KC_6,    KC_7,   KC_8,    KC_9,    KC_0,    KC_BSLS,  \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_F2, KC_RBRC,  KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,  \
-    KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,   KC_F3, KC_QUOT,  KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,   \
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG,  KC_N,    KC_M,   KC_COMM, KC_UP,  KC_SLSH, RSFT_T(KC_ENT),  \
-    KC_LCTL, KC_GRV,  KC_LALT, KC_LALT, KC_LALT, KC_SPC, KC_DEL, KC_BSPC,  KC_SPC,   FN1,     KC_LEFT, KC_DOWN, KC_RIGHT,   KC_LCTL, \
-                                                 KC_SPC, KC_DEL, KC_BSPC,  KC_SPC),
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_F1,   KC_P7,    KC_6,    KC_7,   KC_8,    KC_9,    KC_0,    KC_BSLS,  \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_F2,   KC_P4,    KC_Y,    KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,  \
+    KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,   KC_F3,   KC_P1,    KC_H,    KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,   \
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG,  KC_N,    KC_M,   KC_COMM, KC_UP,   KC_SLSH, RSFT_T(KC_ENT),  \
+    KC_LCTL, KC_GRV,  KC_LBRC, KC_RBRC, KC_LALT, KC_SPC, KC_ENT,  KC_ENT,   KC_SPC,  FN2,    KC_LEFT, KC_DOWN, KC_RIGHT,KC_LCTL, \
+                                                 KC_SPC, KC_ENT,  KC_ENT,   KC_SPC),
 
     [_NAV] = LAYOUT( \
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_TILD, _______, _______, KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_PIPE, KC_F12,  \
     _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_UNDS, POINTER, ARROW,   KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_COLN,  KC_DQT, \
     _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_ASTR, RESET,   RGBRST,  KC_PPLS, KC_AMPR, KC_LT,   KC_GT,   KC_QUES, _______, \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, MAC,     WIN,     GME,     _______, \
                                                  _______, _______, _______, _______)
 };
 
@@ -158,17 +158,18 @@ void rgb_matrix_decrease_flags(void) {
     }
 }
 
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+
 void encoder_update_user(uint8_t index, bool clockwise) {
     uint8_t layer = biton32(layer_state);
 
     if (index == 2) { /* left encoder */
         if (layer == _FN1 || layer == _FN2) {
             if (clockwise) {
-                uint8_t l = _MAC;
-                tap_code(DF(l));
+                tap_code(KC_VOLD);
             } else {
-                uint8_t l = _WIN;
-                tap_code(DF(l));
+                tap_code(KC_VOLU);
             }
         } else {
             if (clockwise) {
@@ -193,6 +194,15 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         }
     }
 }
+
+// void matrix_scan_user(void) {
+//   if (is_alt_tab_active) {
+//     if (timer_elapsed(alt_tab_timer) > 1250) {
+//       unregister_code(KC_LGUI);
+//       is_alt_tab_active = false;
+//     }
+//   }
+// }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // static uint16_t reset_timer;
