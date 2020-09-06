@@ -163,11 +163,47 @@ void backlight_effect_cycle_all(void)
 
 // This runs after another backlight effect and replaces
 // colors already set
+enum {
+	MAC = 0,
+	WIN,
+	GME,
+	NAV,
+	FN
+};
 void backlight_effect_indicators(void)
 {
 #if defined(MONO_BACKLIGHT_WT75_A)
     HSV hsv = { .h = g_config.color_1.h, .s = g_config.color_1.s, .v = g_config.brightness };
-    RGB rgb = hsv_to_rgb( hsv );
+    // RGB rgb = hsv_to_rgb( hsv );
+    uint8_t v = hsv.v;
+
+    RGB rgb = {.r = 0, .g = 0, .b = 0};
+    if ( IS_LAYER_ON(FN) )
+    {
+        rgb.r = (0 * v) >> 8;
+        rgb.g = (0 * v) >> 8; 
+        rgb.b = (255 * v) >> 8; 
+    }
+    else if ( IS_LAYER_ON(GME) )
+    {
+        rgb.r = (255 * v) >> 8;
+        rgb.g = (103 * v) >> 8; 
+        rgb.b = (0 * v) >> 8; 
+    }
+    else if ( IS_LAYER_ON(WIN) || IS_LAYER_ON(NAV) )
+    {
+        rgb.r = (0 * v) >> 8;
+        rgb.g = (191 * v) >> 8; 
+        rgb.b = (255 * v) >> 8;
+    }
+    else // if ( IS_LAYER_ON(MAC) )
+    {
+        rgb.r = (128 * v) >> 8; // 94
+        rgb.g = (0 * v) >> 8;
+        rgb.b = (128 * v) >> 8; // 186
+    }
+
+
     // G8, H8, I8 -> (6*8+7) (7*8+7), (8*8+7)
     IS31FL3736_mono_set_brightness(55, rgb.r);
     IS31FL3736_mono_set_brightness(63, rgb.g);
