@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,   KC_Q,     KC_W,   KC_E,    KC_R,   KC_T,   KC_F7,   KC_F10,  KC_Y,     KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,    \
     KC_LCTL,  KC_A,     KC_S,   KC_D,    KC_F,   KC_G,   KC_F8,   KC_F11,  KC_H,     KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,    \
     KC_LSFT,  KC_Z,     KC_X,   KC_C,    KC_V,   KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,    \
-    G(KC_TAB),G(KC_GRV),KC_LALT,KC_LGUI, FN1,     KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   FN2,  RGUI_T(KC_LEFT), KC_DOWN, KC_UP, KC_RIGHT,\
+    G(KC_TAB),G(KC_GRV),KC_LALT,KC_LGUI, FN1,    KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   FN2, RGUI_T(KC_LEFT), KC_DOWN, KC_UP, KC_RIGHT,\
                                                  KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
 
     [_WIN] = LAYOUT( \
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,   KC_Q,     KC_W,   KC_E,    KC_R,   KC_T,   KC_F10,  KC_F10,  KC_Y,     KC_U,   KC_I,    KC_O,    KC_P,    KC_BSPC,    \
     NAV,      KC_A,     KC_S,   KC_D,    KC_F,   KC_G,   KC_F11,  KC_F11,  KC_H,     KC_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,    \
     KC_LSFT,  KC_Z,     KC_X,   KC_C,    KC_V,   KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,    \
-    A(KC_TAB),KC_LGUI,  KC_LALT,KC_LCTL, FN1,     KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   FN2,  RCTL_T(KC_LEFT), KC_DOWN, KC_UP, KC_RIGHT,\
+    KC_LGUI, A(KC_TAB), KC_LALT,KC_LCTL, FN1,    KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   FN2, RCTL_T(KC_LEFT), KC_DOWN, KC_UP, KC_RIGHT,\
                                                  KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
 
     [_GME] = LAYOUT( \
@@ -190,15 +190,6 @@ void encoder_update_user(uint8_t index, bool clockwise) {
         }
     }
 }
-
-// void matrix_scan_user(void) {
-//   if (is_alt_tab_active) {
-//     if (timer_elapsed(alt_tab_timer) > 1250) {
-//       unregister_code(KC_LGUI);
-//       is_alt_tab_active = false;
-//     }
-//   }
-// }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // static uint16_t reset_timer;
