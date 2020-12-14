@@ -5,6 +5,12 @@
 #    include "split_util.h"
 #endif
 
+#define CTL_ESC CTL_T(KC_ESC)
+#define NAV_ESC LT(_N, KC_ESC)
+#define SFT_ENT SFT_T(KC_ENT)
+#define GUI_LEFT GUI_T(KC_LEFT)
+#define CTL_LEFT CTL_T(KC_LEFT)
+
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -22,36 +28,36 @@ enum custom_keycodes { RGBRST = SAFE_RANGE, RGB_MENU, RGB_SAVE, NAV_K, NAV_O, NA
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_M] = LAYOUT( \
-    KC_ESC,       KC_1,     KC_2,   KC_3,    KC_4,    KC_5,   KC_F5,   KC_F8,   KC_6,     KC_7,   KC_8,     KC_9,   KC_0,    KC_DEL,     \
-    KC_TAB,       KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   KC_F7,   KC_F10,  KC_Y,     KC_U,   KC_I,     KC_O,   KC_P,    KC_BSPC,    \
-    CTL_T(KC_ESC),KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_F8,   KC_F11,  KC_H,     KC_J,   KC_K,     KC_L,   KC_SCLN, KC_QUOT,    \
-    KC_LSFT,      KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM,  KC_DOT, KC_SLSH, SFT_T(KC_ENT),    \
-    G(KC_TAB), G(KC_GRV), KC_LALT, KC_LGUI, MO(_L),   KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   MO(_R), GUI_T(KC_LEFT),  KC_DOWN, KC_UP, KC_RIGHT,\
-                                                      KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
+    KC_ESC,    KC_1,     KC_2,   KC_3,    KC_4,     KC_5,   KC_F5,   KC_F8,   KC_6,     KC_7,   KC_8,     KC_9,    KC_0,     KC_DEL,     \
+    KC_TAB,    KC_Q,     KC_W,   KC_E,    KC_R,     KC_T,   KC_F7,   KC_F10,  KC_Y,     KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,    \
+    CTL_ESC,   KC_A,     KC_S,   KC_D,    KC_F,     KC_G,   KC_F8,   KC_F11,  KC_H,     KC_J,   KC_K,     KC_L,    KC_SCLN,  KC_QUOT,    \
+    KC_LSFT,   KC_Z,     KC_X,   KC_C,    KC_V,     KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM,  KC_DOT,  KC_SLSH,  SFT_ENT,    \
+    G(KC_TAB), G(KC_GRV), KC_LALT, KC_LGUI, MO(_L), KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   MO(_R), GUI_LEFT, KC_DOWN, KC_UP,    KC_RIGHT,\
+                                                    KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
 
     [_W] = LAYOUT( \
-    _______,   _______,     _______,  _______, _______, _______, KC_F5,   KC_F8,   _______,  _______,   _______,     _______, _______, _______,     \
-    _______,   _______,     _______,  _______, _______, _______, KC_F10,  KC_F10,  _______,  _______,   _______,     _______, _______, _______,    \
-    LT(_N, KC_ESC), _______, _______, _______, _______, _______, KC_F11,  KC_F11,  _______,  _______,   _______,     _______, _______, _______,    \
-    _______,   _______,    _______,   _______, _______, _______, KC_MUTE, RGB_TOG, _______,  _______,   _______,     _______, _______, _______,    \
-    KC_LGUI,   A(KC_TAB), KC_LALT,   KC_LCTL,  MO(_L),  _______, _______, _______, _______,  MO(_R), CTL_T(KC_LEFT), _______, _______, _______,\
-                                                        _______, _______, _______, _______),
+    _______,  _______,   _______,  _______, _______, _______, KC_F5,   KC_F8,   _______,  _______,   _______,  _______, _______, _______,     \
+    _______,  _______,   _______,  _______, _______, _______, KC_F10,  KC_F10,  _______,  _______,   _______,  _______, _______, _______,    \
+    NAV_ESC,  _______,   _______,  _______, _______, _______, KC_F11,  KC_F11,  _______,  _______,   _______,  _______, _______, _______,    \
+    _______,  _______,   _______,  _______, _______, _______, KC_MUTE, RGB_TOG, _______,  _______,   _______,  _______, _______, _______,    \
+    KC_LGUI,  A(KC_TAB), KC_LALT,  KC_LCTL, MO(_L),  _______, _______, _______, _______,  MO(_R),    CTL_LEFT, _______, _______, _______,\
+                                                     _______, _______, _______, _______),
 
     [_G] = LAYOUT( \
-    _______,   _______,    _______,   _______, _______, _______, KC_F1,   KC_P7,    _______,  _______,  _______,  _______,  _______,  _______,  \
-    _______,   _______,    _______,   _______, _______, _______, KC_F2,   KC_P4,    _______,  _______,  _______,  _______,  _______,  _______,  \
-    LT(_N, KC_ESC), _______, _______, _______, _______, _______, KC_F3,   KC_P1,    _______,  _______,  _______,  _______,  _______,  _______,  \
-    _______,  _______,     _______,   _______, _______, _______, KC_MUTE, RGB_TOG,  _______,  _______,  _______,  KC_UP,    _______,  _______,  \
-    KC_LCTL,  KC_GRV,     KC_LBRC,    KC_RBRC, KC_LALT, _______, _______, _______,  _______,  MO(_R),   KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_RGUI,  \
-                                               _______, _______, _______, _______),
+    _______,  _______,   _______,  _______, _______, _______, KC_F1,   KC_P7,    _______,  _______,  _______,  _______,  _______,  _______,  \
+    _______,  _______,   _______,  _______, _______, _______, KC_F2,   KC_P4,    _______,  _______,  _______,  _______,  _______,  _______,  \
+    NAV_ESC,  _______,   _______,  _______, _______, _______, KC_F3,   KC_P1,    _______,  _______,  _______,  _______,  _______,  _______,  \
+    _______,  _______,   _______,  _______, _______, _______, KC_MUTE, RGB_TOG,  _______,  _______,  _______,  KC_UP,    _______,  _______,  \
+    KC_LCTL,  KC_GRV,    KC_LBRC,  KC_RBRC, KC_LALT, _______, _______, _______,  _______,  MO(_R),   KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_RGUI,  \
+                                                     _______, _______, _______,  _______),
 
     [_N] = LAYOUT( \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, _______, KC_END,  _______, _______, _______, _______, _______, NAV_U,   _______, NAV_O,   KC_UP,   _______, \
-    _______, KC_HOME, _______, KC_DEL, KC_RIGHT, _______, _______, _______, KC_BSPC, _______, NAV_K,   _______, _______, _______, \
-    _______, _______, _______, C(KC_C), _______, KC_LEFT, _______, _______, KC_DOWN, _______, _______, _______, _______, _______, \
-    _______,_______,_______,_______,_______,LGUI(KC_SPC), _______, _______, LGUI(KC_SPC),_______,_______,_______,_______,_______, \
-                                            LGUI(KC_SPC), _______, _______, LGUI(KC_SPC)),
+    _______, _______, _______, _______, _______,  _______,   _______,  _______,  _______,   _______,  _______, _______, _______, _______, \
+    _______, _______, _______, KC_END,  _______,  _______,   _______,  _______,  _______,   NAV_U,    _______, NAV_O,   KC_UP,   _______, \
+    _______, KC_HOME, _______, KC_DEL,  KC_RIGHT, _______,   _______,  _______,  KC_BSPC,   _______,  NAV_K,   _______, _______, _______, \
+    _______, _______, _______, C(KC_C), _______,  KC_LEFT,   _______,  _______,  KC_DOWN,   _______,  _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______,  LGUI(KC_SPC),_______,_______,LGUI(KC_SPC), _______, _______, _______, _______, _______, \
+                                                  LGUI(KC_SPC),_______,_______,LGUI(KC_SPC)),
 
 
     [_L] = LAYOUT( \

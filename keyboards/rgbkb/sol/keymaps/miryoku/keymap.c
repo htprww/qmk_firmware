@@ -5,6 +5,24 @@
 #    include "split_util.h"
 #endif
 
+// Left-hand home row mods
+#define CTL_A CTL_T(KC_A)
+#define GUI_A GUI_T(KC_A)
+#define ALT_S ALT_T(KC_S)
+#define GUI_D GUI_T(KC_D)
+#define CTL_D CTL_T(KC_D)
+#define SFT_F SFT_T(KC_F)
+
+// Right-hand home row mods
+#define SFT_J SFT_T(KC_J)
+#define GUI_K GUI_T(KC_K)
+#define CTL_K LCTL_T(KC_K)
+#define ALT_L LALT_T(KC_L)
+#define CTL__ CTL_T(KC_SCLN)
+#define GUI__ GUI_T(KC_SCLN)
+
+
+
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -24,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_M] = LAYOUT( \
     KC_ESC,       KC_1,     KC_2,   KC_3,    KC_4,    KC_5,   KC_F5,   KC_F8,   KC_6,     KC_7,   KC_8,     KC_9,   KC_0,    KC_DEL,     \
     KC_TAB,       KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   KC_F7,   KC_F10,  KC_Y,     KC_U,   KC_I,     KC_O,   KC_P,    KC_BSPC,    \
-    CTL_T(KC_ESC),KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_F8,   KC_F11,  KC_H,     KC_J,   KC_K,     KC_L,   KC_SCLN, KC_QUOT,    \
+    CTL_T(KC_ESC),CTL_A,    ALT_S,  GUI_D,   SFT_F,   KC_G,   KC_F8,   KC_F11,  KC_H,     SFT_J,  GUI_K,    ALT_L,  CTL__,   KC_QUOT,    \
     KC_LSFT,      KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_MUTE, RGB_TOG, KC_N,     KC_M,   KC_COMM,  KC_DOT, KC_SLSH, SFT_T(KC_ENT),    \
     G(KC_TAB), G(KC_GRV), KC_LALT, KC_LGUI, MO(_L),   KC_SPC, KC_ENT,  KC_ENT,  KC_SPC,   MO(_R), GUI_T(KC_LEFT),  KC_DOWN, KC_UP, KC_RIGHT,\
                                                       KC_SPC, KC_ENT,  KC_ENT,  KC_SPC),
@@ -32,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_W] = LAYOUT( \
     _______,   _______,     _______,  _______, _______, _______, KC_F5,   KC_F8,   _______,  _______,   _______,     _______, _______, _______,     \
     _______,   _______,     _______,  _______, _______, _______, KC_F10,  KC_F10,  _______,  _______,   _______,     _______, _______, _______,    \
-    LT(_N, KC_ESC), _______, _______, _______, _______, _______, KC_F11,  KC_F11,  _______,  _______,   _______,     _______, _______, _______,    \
+    LT(_N, KC_ESC), GUI_A,  _______,  CTL_D,   _______, _______, KC_F11,  KC_F11,  _______,  _______,   CTL_K,       _______, GUI__,   _______,    \
     _______,   _______,    _______,   _______, _______, _______, KC_MUTE, RGB_TOG, _______,  _______,   _______,     _______, _______, _______,    \
     KC_LGUI,   A(KC_TAB), KC_LALT,   KC_LCTL,  MO(_L),  _______, _______, _______, _______,  MO(_R), CTL_T(KC_LEFT), _______, _______, _______,\
                                                         _______, _______, _______, _______),
