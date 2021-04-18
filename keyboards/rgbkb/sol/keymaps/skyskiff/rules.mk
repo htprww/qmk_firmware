@@ -8,6 +8,8 @@
 
 FULLHAND_ENABLE         = yes
 EXTRA_ENCODERS_ENABLE   = yes
+MOUSEKEY_ENABLE         = yes        # Mouse keys
+
 
 # Do not edit past here
 include keyboards/$(KEYBOARD)/post_rules.mk
