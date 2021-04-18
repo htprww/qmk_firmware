@@ -8,7 +8,7 @@
 
 FULLHAND_ENABLE         = yes
 EXTRA_ENCODERS_ENABLE   = yes
-MOUSEKEY_ENABLE         = yes        # Mouse keys
+MOUSEKEY_ENABLE         = no        # Mouse keys
 
 
 # Do not edit past here

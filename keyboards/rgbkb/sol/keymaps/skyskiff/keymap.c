@@ -19,9 +19,9 @@ enum layer_number {
     _M = 0,
     _W,
     _G,
-    _N,
     _L,
     _R,
+    _N,
    
 };
 
@@ -52,33 +52,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,  KC_GRV,  KC_LBRC, KC_RBRC, KC_LALT,  KC_SPC, KC_ENT,   KC_ENT,   KC_SPC,   MO(_R), KC_RCTL,  KC_RGUI, KC_BSLS,  TG(_L),    \
                                                    KC_SPC, KC_ENT,   KC_ENT,   KC_SPC),
 
-    [_N] = LAYOUT( \
-    _______, _______, _______, _______, _______,  _______,   _______,  _______,  _______,   _______,  _______, _______, _______, _______, \
-    _______, KC_HOME, KC_UP,   KC_END,  KC_BSPC,  _______,   _______,  _______,  _______,   NAV_U,    _______, NAV_O,   KC_UP,   _______, \
-    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL, _______,   _______,  _______,  KC_BSPC,   _______,  NAV_K,   _______, _______, _______, \
-    _______, _______, _______, C(KC_C), _______,  _______,   _______,  _______,  KC_DOWN,   _______,  _______, _______, _______, _______, \
-    _______, _______, _______, _______, _______,  LGUI(KC_SPC),_______,_______,LGUI(KC_SPC), _______, _______, _______, _______, _______, \
-                                                  LGUI(KC_SPC),_______,_______,LGUI(KC_SPC)),
-
-
     [_L] = LAYOUT( \
-    _______, KC_F1,    KC_F2,   KC_F3,   KC_F4,     KC_F5,   _______, _______,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  \
-    KC_PGUP, KC_BTN1,  KC_MS_U, KC_BTN2, KC_WH_U,   XXXXXXX, _______, _______,  KC_PLUS, KC_7,    KC_8,    KC_9,    KC_AMPR,  KC_F12,  \
-    KC_PGDN, KC_MS_L,  KC_MS_D, KC_MS_R, KC_WH_D,  XXXXXXX, S(KC_F8),S(KC_F11),KC_MINS, KC_4,    KC_5,    KC_6,    KC_ASTR,  _______,  \
-    _______, KC_MPRV,  KC_MPLY, KC_MNXT,  _______, XXXXXXX, RESET,   RGBRST,   KC_EQL,  KC_1,    KC_2,    KC_3,    _______,  _______,\
-    _______, _______,  _______, _______,  _______, KC_SPC,  _______, _______,  KC_SPC,  KC_0,    KC_DOT,  _______,  _______, _______,  \
-                                                   KC_SPC,  _______, _______,  KC_SPC), 
-
+    _______, KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, _______,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,   \
+    KC_PGUP, KC_PSCR,  KC_SLCK, KC_PAUS, KC_INS,  KC_CAPS, _______, _______,  KC_PLUS, KC_7,    KC_8,    KC_9,    KC_AMPR,  KC_F12,   \
+    KC_PGDN, KC_APP,   KC_WSCH, KC_CALC, KC_MYCM, XXXXXXX, _______, _______,  KC_MINS, KC_4,    KC_5,    KC_6,    KC_ASTR,  _______,  \
+    _______, KC_MPRV,  KC_MPLY, KC_MNXT, KC_MSEL, XXXXXXX, RESET,   RGBRST,   KC_EQL,  KC_1,    KC_2,    KC_3,    _______,  _______,  \
+    _______, _______,  _______, _______,  _______, KC_SPC, _______, _______,  KC_SPC,  KC_0,    KC_DOT,  _______, _______,  _______,  \
+                                                   KC_SPC, _______, _______,  KC_SPC), 
  
     [_R] = LAYOUT( \
-    _______, KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, _______,   KC_F6,   KC_F7,     KC_F8,   KC_F9,    KC_F10,  KC_F11,  \
-    KC_CAPS, KC_TILD,  KC_MINS, KC_PLUS, KC_LBRC, KC_RBRC, _______, _______,   KC_PGUP, C(KC_LEFT), KC_UP, C(KC_RGHT), KC_BSPC, KC_F12,  \
-    _______, KC_GRV,   KC_UNDS, KC_EQL,  KC_LPRN, KC_RPRN, _______, S(KC_F11), KC_PGDN, KC_LEFT,  KC_DOWN, KC_RGHT,  KC_DEL, _______,  \
-    _______, FUNCTION, POINTER, ARROW,   KC_LCBR, KC_RCBR, RESET,   RGBRST,    XXXXXXX, KC_HOME,  XXXXXXX, KC_END,   XXXXXXX, _______,\
-    _______, _______, _______, _______, _______,  KC_SPC,  _______, _______,   KC_SPC,  _______,  DF(_M), DF(_W),   DF(_G), _______,\
+    _______, KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, _______,   KC_F6,    KC_F7,     KC_F8,   KC_F9,     KC_F10,  KC_F11,  \
+    _______, KC_TILD,  KC_MINS, KC_PLUS, KC_LBRC, KC_RBRC, _______, _______,   KC_PGUP, C(KC_LEFT), KC_UP,  C(KC_RGHT), KC_BSPC, KC_F12,  \
+    _______, KC_GRV,   KC_UNDS, KC_EQL,  KC_LPRN, KC_RPRN, _______, _______,   KC_PGDN,  KC_LEFT,   KC_DOWN, KC_RGHT,   KC_DEL,  _______,  \
+    _______, FUNCTION, POINTER, ARROW,   KC_LCBR, KC_RCBR, RESET,   RGBRST,    XXXXXXX,  KC_HOME,   NAV_K,   KC_END,    NAV_U,   _______,\
+    _______, _______, _______, _______, _______,  KC_SPC,  _______, _______,   KC_SPC,   _______,   _______,  _______,  _______, _______,\
                                                   KC_SPC,  _______, _______,   KC_SPC),
 
-   
+    [_N] = LAYOUT( \
+    _______, _______, _______, _______, _______, _______,    DF_M,    _______,  _______,    _______,  _______, _______, _______, _______, \
+    _______, KC_HOME, KC_UP,   KC_END,  KC_BSPC, _______,    DF_W,    _______,  _______,    NAV_U,    _______, NAV_O,   KC_UP,   _______, \
+    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL,  _______,    DF_G,    _______,  KC_BSPC,    _______,  NAV_K,   _______, _______, _______, \
+    _______, _______, _______, C(KC_C), _______, _______,    RESET,   RGBRST,   KC_DOWN,    _______,  _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, LGUI(KC_SPC),_______,_______,LGUI(KC_SPC), _______, _______, _______, _______, _______, \
+                                                 LGUI(KC_SPC),_______,_______,LGUI(KC_SPC)),
 };
 
 void rgb_matrix_step_noeeprom(void) {
@@ -250,14 +246,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_M);
             }
+            break;
         case DF_W:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_W);
             }
+            break;
         case DF_G:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_G); 
-            }       
+            }   
+            break;    
     }
     return true;
 }
