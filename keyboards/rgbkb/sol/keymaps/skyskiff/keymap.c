@@ -168,15 +168,20 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 5) { /* right encoder*/
         if (layer == _L || layer == _R) {
             if (clockwise) {  // flipped
-                rgb_matrix_decrease_flags();
-            } else {
-                rgb_matrix_increase_flags();
-            }
-        } else {
-            if (clockwise) {  // flipped
                 rgb_matrix_step_reverse_noeeprom();
             } else {
                 rgb_matrix_step_noeeprom();
+            }
+            // if (clockwise) {  // flipped
+            //     rgb_matrix_decrease_flags();
+            // } else {
+            //     rgb_matrix_increase_flags();
+            // }
+        } else {
+            if (clockwise) {  // flipped
+                tap_code(KC_LEFT);
+            } else {
+                tap_code(KC_RGHT);
             }
         }
     }
