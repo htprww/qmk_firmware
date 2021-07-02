@@ -181,8 +181,8 @@ void backlight_effect_indicators(void)
     if ( IS_LAYER_ON(FN) )
     {
         rgb.r = (0 * v) >> 8;
-        rgb.g = (0 * v) >> 8; 
-        rgb.b = (255 * v) >> 8; 
+        rgb.g = (255 * v) >> 8; 
+        rgb.b = (0 * v) >> 8; 
     }
     else if ( IS_LAYER_ON(GME) )
     {

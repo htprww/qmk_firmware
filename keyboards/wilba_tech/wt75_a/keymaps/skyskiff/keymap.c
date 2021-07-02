@@ -66,30 +66,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		_______, _______, _______,                            _______,                            _______, _______,          KC_MUTE, KC_VOLD, _______),
 };
 
-// layer_state_t layer_state_set_user(layer_state_t state)	{
-//   int layer = biton32(state);
-//   RGB rgb = {.r = 0, .g = 0, .b = 0};
-
-// //   if ( IS_LAYER_ON(3) ) {
-// // 	  rgb.r = 0; rgb.g = 0; rgb.b = 255;
-// //   } 
-  
-//   if (layer == 0) {
-// 	  rgb.r = 255; rgb.g = 255; rgb.b = 255;
-//   } else if (layer == 1) {
-// 	  rgb.r = 255; rgb.g = 0; rgb.b = 0;
-//   } else if (layer == 2) {
-// 	  rgb.r = 0; rgb.g = 255; rgb.b = 0;
-//   }	
-
-//   // G8, H8, I8 -> (6*8+7) (7*8+7), (8*8+7) 
-//   IS31FL3736_mono_set_brightness(55, rgb.r);
-//   IS31FL3736_mono_set_brightness(63, rgb.g);
-//   IS31FL3736_mono_set_brightness(71, rgb.b);
-
-//   return state;
-// }
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case NAV_K:
